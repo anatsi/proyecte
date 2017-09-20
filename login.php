@@ -11,7 +11,7 @@
       $user= new User();
     //incluimos el archivo encargado de las sesiones y creamos el objeto.
       include '/sesiones/sesiones.php';
-      $sesion= new Sesion();
+      $sesion= new Sesiones();
       //llamamos a la funcion de loguear el usuario creada en users.php
       $registrado=$user->LoginUser($_POST['form-username']);
       //comprobamos que el usuario existe
@@ -19,11 +19,8 @@
         //comprobamos que la contraseña que ha puesto es correcta.
         if ($registrado['pass']==md5($_POST['form-password'])) {
           //si el usuario existe y la contraseña es correcta, iniciamos la sesion.
-          echo "Usuario logueado con exito";
           $sesion->addUsuario($registrado['id_user']);
-          ?>
-            <a href="logout.php">Cerrar sesion.</a>
-          <?php
+          header('Location: dashboard.php');
         }else {
           //si la contraseña no coincide, sacamos un mensaje y lo reenviamos al formulario.
           ?>

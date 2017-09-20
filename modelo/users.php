@@ -31,5 +31,22 @@ class User extends db
     }
   }
 
+  //funcion para sacar el nombre del usuario por su id
+  function nombreUsuario($id){
+    //Construimos la consulta
+    $sql="SELECT nombre from users WHERE id_user='".$id."'";
+    //Realizamos la consulta
+    $resultado=$this->realizarConsulta($sql);
+    if($resultado!=false){
+      if($resultado!=false){
+        return $resultado->fetch_assoc();
+      }else{
+        return null;
+      }
+    }else{
+      return null;
+    }
+  }
+
 }
  ?>

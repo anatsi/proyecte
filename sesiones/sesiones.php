@@ -2,7 +2,7 @@
 /**
  * Clase encargada de crear/destruir sesiones.
  */
-class Sesion
+class Sesiones
 {
   private $usuario=null;
 
