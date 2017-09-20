@@ -7,10 +7,10 @@
   <body>
     <?php
     //incluimos el archivo encargado de la tabla de usuarios de la db y creamos el objeto.
-      include '\modelo\users.php';
+      include '/modelo/users.php';
       $user= new User();
     //incluimos el archivo encargado de las sesiones y creamos el objeto.
-      include '\sesiones\sesiones.php';
+      include '/sesiones/sesiones.php';
       $sesion= new Sesion();
       //llamamos a la funcion de loguear el usuario creada en users.php
       $registrado=$user->LoginUser($_POST['form-username']);
