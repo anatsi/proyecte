@@ -15,8 +15,14 @@
    <head>
      <meta charset="utf-8">
      <title>Bienvendo.</title>
+     <link rel="stylesheet" href="css/dashboard.css">
+     <link rel="shortcut icon" href="favicon.ico">
    </head>
    <body>
+     <header>
+        <img src="logo.png" alt="Logo" id="logo">
+        <a href="logout.php" id="signout">Cerrar sesión</a>
+     </header>
      <?php
      //incluye el archivo de usuario y crea el objeto.
      include '/modelo/users.php';
@@ -33,14 +39,14 @@
 
       //dependiendo de los permisos saca el menu correspondiente.
       if ($menu['menu']==1) {
-        echo "<a href=''>OPERATIVA</a>";
+        echo "<a href='' id='menu'>OPERATIVA</a>";
       }elseif ($menu['menu']==2) {
-        echo "<a href=''>OPERATIVA</a>";
-        echo "<a href=''>NOMINAS</a>";
+        echo "<a href='' id='menu'>OPERATIVA</a>";
+        echo "<a href='' id='menu'>NOMINAS</a>";
       }elseif ($menu['menu']==3) {
-        echo "<a href=''>OPERATIVA</a>";
-        echo "<a href=''>NOMINAS</a>";
-        echo "<a href=''>DIAS LIBRES</a>";
+        echo "<a href='' id='menu'>OPERATIVA</a>";
+        echo "<a href='' id='menu'>NOMINAS</a>";
+        echo "<a href='' id='menu'>DIAS LIBRES</a>";
       }else {
         //si el numero de permiso no es correcto, saca un aviso.
         ?>
