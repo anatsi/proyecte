@@ -1,6 +1,6 @@
 <?php
 //incluimos el archiv de sesiones y creamos el objeto
-  include '/sesiones/sesiones.php';
+  include 'sesiones.php';
   $sesion=new Sesiones();
 
   //comprobamos si la sesion esta iniciada
@@ -25,7 +25,7 @@
      </header>
      <?php
      //incluye el archivo de usuario y crea el objeto.
-     include '/modelo/users.php';
+     include 'users.php';
      $usuario=new User();
 
      //llama a la funcion para devolver el nombre del usuario.
