@@ -31,7 +31,7 @@
      //llama a la funcion para devolver el nombre del usuario.
      $nombreuser=$usuario->nombreUsuario($_SESSION['usuario']);
      //saca el nombre del usuario por pantalla.
-      echo "<h3> Bienvenido ".$nombreuser['name']."</h3><br><br>";
+      echo "<h3 id='bienve'> Bienvenido ".$nombreuser['name']."!</h3><br><br>";
 
       //menu
       //llama a la funcion para saber el menu que mostrar dependiendo de los permisos.
