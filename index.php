@@ -40,7 +40,7 @@
                                 <div class="form-top-left">
                                     <p><img src="assets/files/logo.png" alt="logo TSI" title="Logo TSI" width="100" height="75" /></p>
                                     <h3>Area privada empleados</h3>
-                                    <p>Introducir usuario y contraseña para loguearse:</p>
+                                    <p>Introducir usuario y contraseña para iniciar sesión:</p>
                                 </div>
                                 <div class="form-top-right">
                                     <i class="fa fa-lock"></i>
