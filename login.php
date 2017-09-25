@@ -20,7 +20,11 @@
         if ($registrado['pass']==md5($_POST['form-password'])) {
           //si el usuario existe y la contraseña es correcta, iniciamos la sesion.
           $sesion->addUsuario($registrado['id_user']);
-          header('Location: dashboard.php');
+          ?>
+            <script type="text/javascript">
+              window.location="dashboard.php";
+            </script>
+          <?php
         }else {
           //si la contraseña no coincide, sacamos un mensaje y lo reenviamos al formulario.
           ?>
