@@ -5,10 +5,10 @@
 class db
 {
   //Atributos necesarios para la conexion
-  private $host="db523240012.db.1and1.com";
-  private $user="dbo523240012";
-  private $pass="TSiberia.17";
-  private $db_name="db523240012";
+  private $host="localhost";
+  private $user="root";
+  private $pass="";
+  private $db_name="usuarios";
   //Conector
   private $conexion;
   //Propiedades para controlar errores
