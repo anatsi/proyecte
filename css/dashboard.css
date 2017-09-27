@@ -1,4 +1,7 @@
 /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+body{
+  background-image: url("");
+}
 *, :before, :after {
   box-sizing: border-box;
 }
@@ -114,4 +117,10 @@
   text-decoration: none;
   color: red;
   margin-top: 0;
+}
+#text{
+ position: absolute;
+ left: 30%;
+ top: 30%;
+ margin-right: 10%;
 }
