@@ -41,7 +41,7 @@
         echo "<ul class='unstyled list-hover-slide'><li><a href='' id='menu'>OPERATIVA</a></li></ul>";
       }elseif ($menu['menu']==2) {
         echo "<ul class='unstyled list-hover-slide'><li><a href='' id='menu'>OPERATIVA</a></li>";
-        echo "<li><a href='prueba.pdf' id='menu'>PLAN TRABAJO</a></li></ul>";
+        echo "<li><a href='Plan_Trabajo_Supervisores_2017.pdf' id='menu'>PLAN TRABAJO</a></li></ul>";
       }else {
         //si el numero de permiso no es correcto, saca un aviso.
         ?>
