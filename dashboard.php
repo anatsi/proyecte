@@ -1,7 +1,9 @@
 <?php
-//incluimos el archiv de sesiones y creamos el objeto
-  include 'sesiones.php';
+//incluimos el archivo de sesiones y de usuarios y creamos los objetos
+  require_once 'sesiones.php';
+  require_once 'users.php';
   $sesion=new Sesiones();
+  $usuario=new User();
 
   //comprobamos si la sesion esta iniciada
   if (isset($_SESSION['usuario'])==false) {
@@ -22,19 +24,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
 </head>
-
-<body>
   <?php
-  //incluye el archivo de usuario y crea el objeto.
-  include 'users.php';
-  $usuario=new User();
-
-  //llama a la funcion para devolver el nombre del usuario.
-//  $nombreuser=$usuario->nombreUsuario($_SESSION['usuario']);
-  //saca el nombre del usuario por pantalla.
-  // echo "<h3 id='bienve'> Bienvenido ".$nombreuser['name']."!</h3><br><br>";
-
-   //menu
+     //menu
    //llama a la funcion para saber el menu que mostrar dependiendo de los permisos.
    $menu=$usuario->menuDash($_SESSION['usuario']);
    ?>
@@ -50,7 +41,7 @@
         echo "<ul class='unstyled list-hover-slide'><li><a href='' id='menu'>OPERATIVA</a></li></ul>";
       }elseif ($menu['menu']==2) {
         echo "<ul class='unstyled list-hover-slide'><li><a href='' id='menu'>OPERATIVA</a></li>";
-        echo "<li><a href='http://www.acceso.tsiberia.es/info/supervisores/Plan_Trabajo_Supervisores_2017.pdf' id='menu'>PLAN TRABAJO</a></li></ul>";
+        echo "<li><a href='prueba.pdf' id='menu'>PLAN TRABAJO</a></li></ul>";
       }else {
         //si el numero de permiso no es correcto, saca un aviso.
         ?>
@@ -63,7 +54,17 @@
     </nav>
   </div>
 </header>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+<body>
+  <?php
+  //llama a la funcion para devolver el nombre del usuario.
+    $nombreuser=$usuario->nombreUsuario($_SESSION['usuario']);
+  //saca el nombre del usuario por pantalla.
+   echo "<div id='bienve'><h3> Bienvenido ".$nombreuser['name']."!</h3>";
+   echo "<a href='logout.php'>Cerrar sesión</a></div>";
+   ?>
+
 </body>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 </html>
 <?php } ?>

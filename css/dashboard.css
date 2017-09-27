@@ -99,3 +99,19 @@
   height: 120px;
   width: auto;
 }
+#bienve{
+  float: right;
+  margin-right: 1.5%;
+
+}
+#bienve h3{
+  font-size: 200%;
+  color: #330066;
+  margin-bottom: 5px;
+}
+#bienve a{
+  float: right;
+  text-decoration: none;
+  color: red;
+  margin-top: 0;
+}
