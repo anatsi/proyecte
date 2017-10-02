@@ -1,75 +1,83 @@
 <?php
-//incluimos el archivo de sesiones y de usuarios y creamos los objetos
-  require_once 'sesiones.php';
-  require_once 'users.php';
-  $sesion=new Sesiones();
-  $usuario=new User();
+	//incluimos los archivos de sesiones y de usuarios y creamos los objetos.
+	require_once 'sesiones.php';
+	require_once 'users.php';
 
-  //comprobamos si la sesion esta iniciada
-  if (isset($_SESSION['usuario'])==false) {
-    //si no esta iniciada, devuelve a el formulario de inicio.
-    header('Location: index.php');
-  }else {
-    //si esta iniciada se muestra la pagina.
+	$sesion= new Sesiones();
+	$usuario= new User();
+
+	//comprobamos si la sesión esta iniciada
+	if (isset($_SESSION['usuario'])==false) {
+		//si no esta iniciada nos devuelve al formulario de inicio.
+		header('Location: index.php');
+	}else {
+		//si esta iniciada se muestra la pagina.
  ?>
 <!DOCTYPE html>
-<html >
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bienvenido.</title>
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/dashboard.css">
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-
-</head>
-  <?php
-     //menu
-   //llama a la funcion para saber el menu que mostrar dependiendo de los permisos.
-   $menu=$usuario->menuDash($_SESSION['usuario']);
-   ?>
-  <header class="header" role="banner">
-  <h1 class="logo">
-    <a href="#"><img src="logo.png" id="logo"></a>
-  </h1>
-  <div class="nav-wrap">
-    <nav class="main-nav" role="navigation">
-      <?php
-      //dependiendo de los permisos saca el menu correspondiente.
-      if ($menu['menu']==1) {
-        echo "<ul class='unstyled list-hover-slide'><li><a href='' id='menu'>OPERATIVA</a></li>";
-        echo "<li><a href='' id='menu'>NOMINAS</a></li></ul>";
-      }elseif ($menu['menu']==2) {
-        echo "<ul class='unstyled list-hover-slide'><li><a href='' id='menu'>OPERATIVA</a></li>";
-        echo "<li><a href='Plan_Trabajo_Supervisores_2017.pdf' id='menu'>PLAN TRABAJO</a></li>";
-        echo "<li><a href='' id='menu'>NOMINAS</a></li></ul>";
-      }else {
-        //si el numero de permiso no es correcto, saca un aviso.
-        ?>
-        <script type="text/javascript">
-          alert('Ups, algo salio mal. Hable con el responsable.');
-        </script>
-        <?php
-      }
-      ?>
-    </nav>
-  </div>
-</header>
-
-<body>
-  <?php
-  //llama a la funcion para devolver el nombre del usuario.
-    $nombreuser=$usuario->nombreUsuario($_SESSION['usuario']);
-  //saca el nombre del usuario por pantalla.
-   echo "<div id='bienve'><h3> Bienvenido ".$nombreuser['name']."!</h3>";
-   echo "<a href='logout.php'>Cerrar sesión</a></div>";
-   ?>
-   <section id="text">
-     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea comnim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-   </section>
-</body>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<html  charset="UTF-8" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Area trabajadores.</title>
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/dashboard.css" />
+	</head>
+	<body>
+		<div class="container demo-1">
+			<!-- Codrops top bar -->
+			<div class="codrops-top clearfix">
+				<?php
+					//llamamos a la función para devolver el nombre de usuario.
+					$nombreuser=$usuario->nombreUsuario($_SESSION['usuario']);
+					//sacamos el nombre de usuario por su id
+					echo "<a><strong>Bienvenido ".$nombreuser['name']."</strong></a>";
+				 ?>
+				<span class="right"><a href="logout.php">Cerrar Sesion</a></span>
+			</div><!--/ Codrops top bar -->
+			<header class="clearfix">
+				<h1>Dashboard</h1>
+				<div id="imagen">
+     			   	<img src="logo.png" alt="Logo" height="98.6px" width="147.3px"/>
+   				</div><br><br>
+				<nav class="codrops-demos">
+					<?php
+						//llamamos a la funcion que nos devuelve el numero para el menu.
+						$menu=$usuario->menuDash($_SESSION['usuario']);
+						if ($menu['menu']==1) {
+							echo "<a href=''>APP Operativa</a>";
+							echo "<a href=''>Nóminas</a>";
+						}elseif ($menu['menu']==2) {
+							echo "<a href=''>APP Operativa</a>";
+							echo "<a href=''>Nóminas</a>";
+							echo "<a href='Plan_Trabajo_Supervisores_2017.pdf'>Plan trabajo anual</a>";
+						}else {
+							//si el numero de permisos no es correcto, sacara un aviso.
+						?>
+							<script type="text/javascript">
+								alert('Ups, algo salio mal. Hable con el responsable.');
+							</script>
+						<?php
+						}
+					 ?>
+				</nav>
+			</header>
+			<div class="main clearfix">
+				<div class="column">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit eros dolor, quis convallis lorem vulputate sed. Ut purus ex, accumsan et imperdiet nec. </p>
+				</div>
+				<div class="column">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit eros dolor, quis convallis lorem vulputate sed. Ut purus ex, accumsan et imperdiet nec. </p>
+				</div>
+				</div>
+			</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/jquery.dlmenu.js"></script>
+		<script>
+			$(function() {
+				$( '#dl-menu' ).dlmenu();
+			});
+		</script>
+	</body>
 </html>
 <?php } ?>
