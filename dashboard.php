@@ -39,7 +39,8 @@
       <?php
       //dependiendo de los permisos saca el menu correspondiente.
       if ($menu['menu']==1) {
-        echo "<ul class='unstyled list-hover-slide'><li><a href='' id='menu'>OPERATIVA</a></li></ul>";
+        echo "<ul class='unstyled list-hover-slide'><li><a href='' id='menu'>OPERATIVA</a></li>";
+        echo "<li><a href='' id='menu'>NOMINAS</a></li></ul>";
       }elseif ($menu['menu']==2) {
         echo "<ul class='unstyled list-hover-slide'><li><a href='' id='menu'>OPERATIVA</a></li>";
         echo "<li><a href='Plan_Trabajo_Supervisores_2017.pdf' id='menu'>PLAN TRABAJO</a></li>";
