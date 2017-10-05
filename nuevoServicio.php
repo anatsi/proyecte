@@ -1,3 +1,15 @@
+<?php
+//incluimos todas las clases necesarias e iniciamos sus objetos.
+require_once 'sesiones.php';
+require_once 'users.php';
+require_once 'cliente.php';
+require_once 'servicio.php';
+
+$usuario=new User();
+$sesion=new Sesiones();
+$cliente=new Cliente();
+$servicio=new Servicio();
+ ?>
 <!DOCTYPE html>
 <html >
 <head>
@@ -17,10 +29,6 @@
 
 <div class="codrops-top clearfix">
   <?php
-  include 'sesiones.php';
-  include 'users.php';
-  $usuario= new User();
-  $sesion= new Sesiones();
     //llamamos a la función para devolver el nombre de usuario.
     $nombreuser=$usuario->nombreUsuario($_SESSION['usuario']);
     //sacamos el nombre de usuario por su id
@@ -39,7 +47,7 @@
 
       <nav class="menu">
         <a href="#">Consultar</a>
-        <a href="#">Nuevo Servicio</a>
+        <a href="nuevoServicio.php">Nuevo Servicio</a>
       </nav>
 
     </header>
@@ -48,14 +56,20 @@
       <div class="container">
         <!-- Contenido de la pagina. -->
         <h1>Crear un nuevo servicio</h1>
-        <form class="cf">
+
+        <form class="cf" action="nuevoServicio.php" method="post">
           <div class="half left cf">
             <input type="text" name="nombre" id="input-name" placeholder="Nombre servicio">
             <input type="number" name="recursos" id="input-recursos" placeholder="Recursos" min="0">
             <input type="date" name="inicio" id="input-inicio" placeholder="Fecha inicio">
             <select class="" name="cliente">
               <option value="" selected style="color:gray">Cliente</option>
-              <option value="">FORD</option>
+              <?php
+                $listaclientes=$cliente->listaClientes();
+                foreach ($listaclientes as $cliente) {
+                  echo "<option value=".$cliente['id'].">".$cliente['nombre']."</option>";
+                }
+               ?>
             </select>
             <input type="text" name="responsable" id="input-responsable" placeholder="Responsable">
             <input type="tel" name="tel" id="input-tel" placeholder="Telefono responsable">
@@ -80,3 +94,6 @@
 
 </body>
 </html>
+<?php
+  echo "<br><br><br>" . $_POST['cliente'];
+ ?>
