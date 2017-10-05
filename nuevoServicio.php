@@ -35,7 +35,7 @@
     <header class="header">
 
       <a href="#" class="header__icon" id="header__icon"></a>
-      <a href="#" class="header__logo"><img src="logo.png" alt=""></a>
+      <a href="dashboard.php" class="header__logo"><img src="logo.png" alt=""></a>
 
       <nav class="menu">
         <a href="#">Consultar</a>
