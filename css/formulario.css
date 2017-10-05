@@ -78,6 +78,9 @@ form textarea {
     float: none;
     margin-bottom: 0;
   }
+  h1{
+    margin-top: 20px;
+  }
 }
 /* Clearfix */
 .cf:before,
