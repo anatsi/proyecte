@@ -16,7 +16,7 @@ class Servicio extends db
   function nuevoServicio($nombre, $recursos, $inicio, $cliente, $responsable, $tel, $correo, $csup, $crrhh, $caf){
     //realizamos la consuta y la guardamos en $sql
     $sql="INSERT INTO servicios(id, nombre, recursos, f_inicio, f_fin, id_cliente, responsable, telefono, correo, com_supervisor, com_rrhh, com_admin_fin)
-     VALUES (NULL, '".$nombre."', ".$recursos.", '".$inicio."', NULL, ".$cliente.", '".$responsable."', ".$tel.", '".$correo."', '".$csup."', '".$crrhh."', '".$caf."')";
+     VALUES (NULL, '".$nombre."', ".$recursos.", '".$inicio."',' ', ".$cliente.", '".$responsable."', ".$tel.", '".$correo."', '".$csup."', '".$crrhh."', '".$caf."')";
     //Realizamos la consulta utilizando la funcion creada en db.php
     $resultado=$this->realizarConsulta($sql);
     if($resultado!=false){

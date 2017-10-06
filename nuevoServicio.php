@@ -95,5 +95,17 @@ $servicio=new Servicio();
 </body>
 </html>
 <?php
-  echo "<br><br><br>" . $_POST['cliente'];
+//comprbamos que realmente haya rellenado algunos campos
+  if (isset($_POST['nombre']) && isset($_POST['cliente'])) {
+    //si los ha rellenado, llamamos a la función de insertar el servicio y le pasamos los datos.
+    $nuevoServicio=$servicio->nuevoServicio($_POST['nombre'], $_POST['recursos'], $_POST['inicio'], $_POST['cliente'], $_POST['responsable'], $_POST['tel'], $_POST['email'], $_POST['supervisor'], $_POST['rrhh'], $_POST['adminfin']);
+    //comprobamos que se haya registrado.
+    if ($nuevoServicio==null) {
+      //si no se ha registrado le saca un mensaje avisandole
+      echo "error";
+    }else {
+      //si se ha regstrado le saca un mensaje diciendolo
+      echo "Registrado con exito";
+    }
+  }
  ?>
