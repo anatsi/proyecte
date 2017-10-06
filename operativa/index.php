@@ -54,7 +54,7 @@ $cliente=new Cliente();
 
 <!-- Scripts para que el menu en versión movil funcione -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script  src="js/menu.js"></script>
+<script  src="../js/menu.js"></script>
 
 </body>
 </html>
