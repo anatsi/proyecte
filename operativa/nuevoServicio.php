@@ -43,10 +43,10 @@ $servicio=new Servicio();
     <header class="header">
 
       <a href="#" class="header__icon" id="header__icon"></a>
-      <a href="dashboard.php" class="header__logo"><img src="../logo.png" alt=""></a>
+      <a href="../dashboard.php" class="header__logo"><img src="../logo.png" alt=""></a>
 
       <nav class="menu">
-        <a href="#">Consultar</a>
+        <a href="consultarServicio.php">Consultar</a>
         <a href="nuevoServicio.php">Nuevo Servicio</a>
       </nav>
 
@@ -102,10 +102,18 @@ $servicio=new Servicio();
     //comprobamos que se haya registrado.
     if ($nuevoServicio==null) {
       //si no se ha registrado le saca un mensaje avisandole
-      echo "error";
+      ?>
+        <script type="text/javascript">
+          alert("Error al registrar el servicio.");
+        </script>
+      <?php
     }else {
       //si se ha regstrado le saca un mensaje diciendolo
-      echo "Registrado con exito";
+      ?>
+        <script type="text/javascript">
+          alert("Nuevo servicio registrado.");
+        </script>
+      <?php
     }
   }
  ?>

@@ -45,11 +45,11 @@
 						//llamamos a la funcion que nos devuelve el numero para el menu.
 						$menu=$usuario->menuDash($_SESSION['usuario']);
 						if ($menu['menu']==1) {
-							echo "<a href=''>APP Operativa</a>";
+							echo "<a href='operativa/index.php'>APP Operativa</a>";
 							echo "<a href=''>Nóminas</a>";
 							echo "<a href='Peticion_vacaciones.pdf'>Solicitar vacaciones</a>";
 						}elseif ($menu['menu']==2) {
-							echo "<a href=''>APP Operativa</a>";
+							echo "<a href='operativa/index.php'>APP Operativa</a>";
 							echo "<a href=''>Nóminas</a>";
 							echo "<a href='Plan_Trabajo_Supervisores_2017.pdf'>Plan trabajo anual</a>";
 							echo "<a href='Peticion_vacaciones.pdf'>Solicitar vacaciones</a>";
@@ -66,10 +66,10 @@
 			</header>
 			<div class="main clearfix">
 				<div class="column">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit eros dolor, quis convallis lorem vulputate sed. Ut purus ex, accumsan et imperdiet nec. </p>
+					<p></p>
 				</div>
 				<div class="column">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit eros dolor, quis convallis lorem vulputate sed. Ut purus ex, accumsan et imperdiet nec. </p>
+					<p></p>
 				</div>
 				</div>
 			</div>
