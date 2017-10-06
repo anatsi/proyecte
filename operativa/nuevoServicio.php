@@ -1,8 +1,8 @@
 <?php
 //incluimos todas las clases necesarias e iniciamos sus objetos.
-require_once 'sesiones.php';
-require_once 'users.php';
-require_once 'cliente.php';
+require_once '../sesiones.php';
+require_once '../users.php';
+require_once '../cliente.php';
 require_once 'servicio.php';
 
 $usuario=new User();
@@ -15,11 +15,11 @@ $servicio=new Servicio();
 <head>
   <meta charset="UTF-8">
   <title>Nuevo servicio</title>
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel="stylesheet" href="css/formulario.css">
-    <link rel="shortcut icon" href="favicon.ico">
-		<link rel="stylesheet" type="text/css" href="css/dashboard.css" />
+    <link rel="stylesheet" href="../css/formulario.css">
+    <link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="../css/dashboard.css" />
 </head>
 <body>
   <head>
@@ -34,7 +34,7 @@ $servicio=new Servicio();
     //sacamos el nombre de usuario por su id
     echo "<a><strong>Bienvenido ".$nombreuser['name']."</strong></a>";
    ?>
-  <span class="right"><a href="logout.php">Cerrar Sesion</a></span>
+  <span class="right"><a href="../logout.php">Cerrar Sesion</a></span>
 </div><!--/ Codrops top bar -->
 
 <div class="site-container">
@@ -43,7 +43,7 @@ $servicio=new Servicio();
     <header class="header">
 
       <a href="#" class="header__icon" id="header__icon"></a>
-      <a href="dashboard.php" class="header__logo"><img src="logo.png" alt=""></a>
+      <a href="dashboard.php" class="header__logo"><img src="../logo.png" alt=""></a>
 
       <nav class="menu">
         <a href="#">Consultar</a>

@@ -1,6 +1,6 @@
 <?php
 //llamamos a la clase de db encarada de la conexion a la base de datos.
-require_once 'db.php';
+require_once '../db.php';
 /**
  * Clase servicios encargada de las consultas hacia esta tabla de la db.
  */
