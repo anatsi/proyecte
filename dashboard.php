@@ -20,7 +20,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Area trabajadores.</title>
-		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="shortcut icon" href="imagenes/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="css/dashboard.css" />
 	</head>
 	<body>
@@ -38,7 +38,7 @@
 			<header class="clearfix">
 				<h1>Dashboard</h1>
 				<div id="imagen">
-     			   	<img src="logo.png" alt="Logo" height="98.6px" width="147.3px"/>
+     			   	<img src="imagenes/logo.png" alt="Logo" height="98.6px" width="147.3px"/>
    				</div><br><br>
 				<nav class="codrops-demos">
 					<?php

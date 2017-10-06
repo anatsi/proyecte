@@ -18,7 +18,7 @@ $cliente=new Cliente();
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="../css/formulario.css">
-    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="shortcut icon" href="../imagenes/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="../css/dashboard.css" />
 </head>
 <body>
@@ -43,7 +43,7 @@ $cliente=new Cliente();
     <header class="header">
 
       <a href="#" class="header__icon" id="header__icon"></a>
-      <a href="../dashboard.php" class="header__logo"><img src="../logo.png" alt=""></a>
+      <a href="../dashboard.php" class="header__logo"><img src="../imagenes//logo.png" alt=""></a>
 
       <nav class="menu">
         <a href="consultarServicio.php">Consultar</a>
