@@ -46,8 +46,8 @@ $servicio=new Servicio();
       <a href="../dashboard.php" class="header__logo"><img src="../logo.png" alt=""></a>
 
       <nav class="menu">
-        <a href="consultarServicio.php">Consultar</a>
-        <a href="nuevoServicio.php">Nuevo Servicio</a>
+        <a href="">Inicio</a>
+        <a href="">Consultar</a>
       </nav>
 
     </header>
