@@ -59,10 +59,10 @@ $servicio=new Servicio();
 
         <form class="cf" action="nuevoServicio.php" method="post">
           <div class="half left cf">
-            <input type="text" name="nombre" id="input-name" placeholder="Nombre servicio">
-            <input type="number" name="recursos" id="input-recursos" placeholder="Recursos" min="0">
-            <input type="date" name="inicio" id="input-inicio" placeholder="Fecha inicio">
-            <select class="" name="cliente">
+            <input type="text" name="nombre" id="input-name" placeholder="Nombre servicio" required>
+            <input type="number" name="recursos" id="input-recursos" placeholder="Recursos" min="0" required>
+            <input type="date" name="inicio" id="input-inicio" placeholder="Fecha inicio" required>
+            <select class="" name="cliente" required>
               <option value="" selected style="color:gray">Cliente</option>
               <?php
                 $listaclientes=$cliente->listaClientes();
@@ -71,9 +71,9 @@ $servicio=new Servicio();
                 }
                ?>
             </select>
-            <input type="text" name="responsable" id="input-responsable" placeholder="Responsable">
-            <input type="tel" name="tel" id="input-tel" placeholder="Telefono responsable">
-            <input type="email" name="email" id="input-email" placeholder="Correo resposabe">
+            <input type="text" name="responsable" id="input-responsable" placeholder="Responsable" required>
+            <input type="tel" name="tel" id="input-tel" placeholder="Telefono responsable" required>
+            <input type="email" name="email" id="input-email" placeholder="Correo responsable" required>
           </div>
           <div class="half right cf">
             <textarea name="supervisor" type="text" id="input-message" placeholder="Comentario para el supervisor"></textarea>
