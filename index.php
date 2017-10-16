@@ -1,6 +1,13 @@
+<?php
+  require_once 'sesiones.php';
+  $sesion= new Sesiones();
+
+  if (isset($_SESSION['usuario'])) {
+    header('Location: dashboard.php');
+  }else {
+ ?>
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -64,3 +71,4 @@
         <script src="assets/js/scripts.js"></script>
     </body>
 </html>
+<?php } ?>
