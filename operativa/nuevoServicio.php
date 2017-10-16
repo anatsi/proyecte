@@ -46,8 +46,8 @@ $servicio=new Servicio();
       <a href="../dashboard.php" class="header__logo"><img src="../imagenes/logo.png" alt=""></a>
 
       <nav class="menu">
-        <a href="">Inicio</a>
-        <a href="">Consultar</a>
+        <a href="index.php">Inicio</a>
+        <a href="consultarServicio.php">Consultar</a>
       </nav>
 
     </header>
@@ -96,7 +96,7 @@ $servicio=new Servicio();
 </html>
 <?php
 //comprbamos que realmente haya rellenado algunos campos
-  if (isset($_POST['nombre']) && isset($_POST['cliente'])) {
+  if (isset($_POST['nombre']) && isset($_POST['recursos']) && isset($_POST['inicio']) && isset($_POST['cliente']) && isset(['responsable']) && isset($_POST['tel']) && isset($_POST['email'])) {
     //si los ha rellenado, llamamos a la función de insertar el servicio y le pasamos los datos.
     $nuevoServicio=$servicio->nuevoServicio($_POST['nombre'], $_POST['recursos'], $_POST['inicio'], $_POST['cliente'], $_POST['responsable'], $_POST['tel'], $_POST['email'], $_POST['supervisor'], $_POST['rrhh'], $_POST['adminfin']);
     //comprobamos que se haya registrado.
