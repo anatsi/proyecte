@@ -24,7 +24,6 @@ $servicio=new Servicio();
 <body>
   <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet'>
 </head>
 
 <div class="codrops-top clearfix">
@@ -75,7 +74,7 @@ $servicio=new Servicio();
             <input type="tel" name="tel" id="input-tel" placeholder="Telefono responsable" required>
             <input type="email" name="email" id="input-email" placeholder="Correo responsable" required>
           </div>
-          <div class="half right cf">
+          <div class="half rightz cf">
             <textarea name="supervisor" type="text" id="input-message" placeholder="Comentario para el supervisor"></textarea>
             <textarea name="rrhh" type="text" id="input-message" placeholder="Comentario para RRHH"></textarea>
             <textarea name="adminfin" type="text" id="input-message" placeholder="Comentario para el Admin. financiero"></textarea>
