@@ -12,6 +12,29 @@ class Servicio extends db
     parent::__construct();
   }
 
+  //funcion para sacar los servicios para mañana para index de operativa
+  function ServiciosTomorrow()
+  {
+    //cogemos la fecha de mañana para compararla con lo que vamos a sacar.
+    $dia_manana = date('d',time()+84600);
+    $mes_ano = date('Y-m');
+    $fecha=$mes_ano."-".$dia_manana;
+    //Construimos la consulta
+    $sql="SELECT * from servicios WHERE f_inicio<='".$fecha."' AND f_fin=''";
+    //Realizamos la consulta
+    $resultado=$this->realizarConsulta($sql);
+    if($resultado!=null){
+      //Montamos la tabla de resultados
+      $tabla=[];
+      while($fila=$resultado->fetch_assoc()){
+        $tabla[]=$fila;
+      }
+      return $tabla;
+    }else{
+      return null;
+    }
+  }
+
     //funcion para insertar un nuevo servicio en la base de datos.
   function nuevoServicio($nombre, $recursos, $inicio, $cliente, $responsable, $tel, $correo, $csup, $crrhh, $caf){
     //realizamos la consuta y la guardamos en $sql
@@ -25,6 +48,28 @@ class Servicio extends db
       return null;
     }
   }
+
+  //funcion para listar los servicios de hoy en el index de la operativa de servicios
+  function listaServiciosHoy(){
+    //cogemos la fecha de hoy para compararla con lo que vamos a sacar.
+    $fecha=date("Y-m-d");
+    //Construimos la consulta
+    $sql="SELECT * from servicios WHERE f_inicio<='".$fecha."' AND f_fin=''";
+    //Realizamos la consulta
+    $resultado=$this->realizarConsulta($sql);
+    if($resultado!=null){
+      //Montamos la tabla de resultados
+      $tabla=[];
+      while($fila=$resultado->fetch_assoc()){
+        $tabla[]=$fila;
+      }
+      return $tabla;
+    }else{
+      return null;
+    }
+  }
+
+
 }
 
 
