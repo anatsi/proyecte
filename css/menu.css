@@ -7,15 +7,6 @@
   box-sizing: border-box;
 }
 
-/*html, body {
-  font-family: 'Merriweather', sans-serif;
-  font-size: 1em;
-  line-height: 1.4;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}*/
-
 a {
   text-decoration: none;
   color: inherit;
@@ -118,8 +109,6 @@ a {
     top: 0;
     bottom: 0;
     background-color: #fffcf5;
-    /*    overflow-y: scroll;
-        -webkit-overflow-scrolling: touch;*/
     width: 250px;
     -webkit-transform: translateX(-250px);
     transform: translateX(-250px);
