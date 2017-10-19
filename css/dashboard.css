@@ -168,4 +168,8 @@ a {
 		left: 65%;
 		margin-right: 0;
 	}
+
+	.codrops-demos a{
+		min-width: 160px;
+	}
 }
