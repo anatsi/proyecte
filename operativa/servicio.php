@@ -20,7 +20,7 @@ class Servicio extends db
     $mes_ano = date('Y-m');
     $fecha=$mes_ano."-".$dia_manana;
     //Construimos la consulta
-    $sql="SELECT * from servicios WHERE f_inicio<='".$fecha."' AND f_fin=''";
+    $sql="SELECT * from servicios WHERE f_inicio<='".$fecha."' AND f_fin IS NULL";
     //Realizamos la consulta
     $resultado=$this->realizarConsulta($sql);
     if($resultado!=null){
@@ -39,7 +39,7 @@ class Servicio extends db
   function nuevoServicio($nombre, $recursos, $inicio, $cliente, $responsable, $tel, $correo, $csup, $crrhh, $caf){
     //realizamos la consuta y la guardamos en $sql
     $sql="INSERT INTO servicios(id, nombre, recursos, f_inicio, f_fin, id_cliente, responsable, telefono, correo, com_supervisor, com_rrhh, com_admin_fin)
-     VALUES (NULL, '".$nombre."', ".$recursos.", '".$inicio."',' ', ".$cliente.", '".$responsable."', ".$tel.", '".$correo."', '".$csup."', '".$crrhh."', '".$caf."')";
+     VALUES (NULL, '".$nombre."', ".$recursos.", '".$inicio."', NULL, ".$cliente.", '".$responsable."', ".$tel.", '".$correo."', '".$csup."', '".$crrhh."', '".$caf."')";
     //Realizamos la consulta utilizando la funcion creada en db.php
     $resultado=$this->realizarConsulta($sql);
     if($resultado!=false){
@@ -54,7 +54,7 @@ class Servicio extends db
     //cogemos la fecha de hoy para compararla con lo que vamos a sacar.
     $fecha=date("Y-m-d");
     //Construimos la consulta
-    $sql="SELECT * from servicios WHERE f_inicio<='".$fecha."' AND f_fin=''";
+    $sql="SELECT * from servicios WHERE f_inicio<='".$fecha."' AND f_fin IS NULL";
     //Realizamos la consulta
     $resultado=$this->realizarConsulta($sql);
     if($resultado!=null){
