@@ -77,12 +77,6 @@
 				</div>
 			</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="js/jquery.dlmenu.js"></script>
-		<script>
-			$(function() {
-				$( '#dl-menu' ).dlmenu();
-			});
-		</script>
 	</body>
 </html>
 <?php } ?>
