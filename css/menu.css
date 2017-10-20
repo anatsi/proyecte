@@ -28,7 +28,7 @@ a {
   right: 0;
   height: 66px;
   line-height: 66px;
-  color: #A4A4A4;
+  color: red;
   background-color: #fffcf5;
 }
 
@@ -46,6 +46,7 @@ a {
 }
 .menu a {
   padding: 0 10px;
+  color: black;
 }
 .menu a:hover {
   color: #000;
