@@ -9,6 +9,10 @@ $usuario=new User();
 $sesion=new Sesiones();
 $cliente=new Cliente();
 $servicio=new Servicio();
+
+if (isset($_SESSION['usuario'])==false) {
+  header('Location: ../index.php');
+}else {
  ?>
 <!DOCTYPE html>
 <html >
@@ -116,3 +120,4 @@ $servicio=new Servicio();
     }
   }
  ?>
+ <?php } ?>
