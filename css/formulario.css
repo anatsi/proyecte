@@ -56,8 +56,8 @@
         }
         input[type=submit]:hover,submit:hover {
           color: black;
-          background:lightblue;
-          border-color:lightblue;
+          background:rgb(88, 142, 224);
+          border-color:rgb(88, 142, 224);
         }
         textarea,input[type=textarea] {
           min-height:80px;
